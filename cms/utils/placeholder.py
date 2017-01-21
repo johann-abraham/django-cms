@@ -252,7 +252,8 @@ def _extend_nodelist(extend_node):
     """
     # we don't support variable extensions
     if is_variable_extend_node(extend_node):
-        return []
+        warnings.warn("""THIS WAS MODIFIED BY JOHANN ABRAHAM SO THAT VARIABLES COULD BE USED IN TEMPLATES WITH EXTEND. THE NEXT VERSION
+        OF DJANGO CMS SHOULD NOT NEED THIS FIX ANY LONGER""")
         # This is a dictionary mapping all BlockNode instances found in the template that contains extend_node
     blocks = dict(extend_node.blocks)
     _extend_blocks(extend_node, blocks)
